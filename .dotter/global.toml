@@ -1,0 +1,6 @@
+[nushell]
+depends = []
+
+[nushell.files]
+"nushell/config.nu" = "~/.config/nushell/config.nu"
+"nushell/env.nu" = "~/.config/nushell/env.nu"
