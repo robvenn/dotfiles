@@ -1,0 +1,40 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon[\r]
+._*
+.Spotlight-V100
+.Trashes
+
+# Windows
+Thumbs.db
+[Dd]esktop.ini
+$RECYCLE.BIN/
+
+# Editors
+.vscode/
+.idea/
+.zed/
+*.swp
+*.swo
+[._]*.un~
+
+# direnv
+.direnv/
+
+# Tags
+tags
+TAGS
+
+# Local overrides (convention: *.local never committed)
+*.local
+*.local.*
+
+# Temporary files
+*.tmp
+*.tmp.*
+
+# Patch artifacts
+*.orig
+*.rej

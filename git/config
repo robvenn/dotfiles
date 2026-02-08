@@ -1,0 +1,57 @@
+[init]
+    defaultBranch = main
+
+[push]
+    autoSetupRemote = true
+    followTags = true
+
+[fetch]
+    prune = true
+    pruneTags = true
+    all = true
+    parallel = 0
+
+[column]
+    ui = auto
+
+[branch]
+    sort = -committerdate
+
+[tag]
+    sort = version:refname
+
+[diff]
+    algorithm = histogram
+    colorMoved = plain
+    colorMovedWS = allow-indentation-change
+    mnemonicPrefix = true
+    renames = true
+
+[rebase]
+    autoSquash = true
+    autoStash = true
+    updateRefs = true
+
+[rerere]
+    enabled = true
+    autoupdate = true
+
+[commit]
+    verbose = true
+
+[help]
+    autocorrect = prompt
+
+[pull]
+    rebase = true
+
+[merge]
+    conflictStyle = zdiff3
+    renormalize = true
+
+[core]
+    autocrlf = false
+    untrackedCache = true
+
+[pack]
+    threads = 0

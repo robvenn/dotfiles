@@ -5,5 +5,10 @@ depends = []
 "nushell/config.nu" = "~/.config/nushell/config.nu"
 "nushell/env.nu" = "~/.config/nushell/env.nu"
 
+[git.files]
+"git/config" = "~/.config/git/config"
+"git/attributes" = "~/.config/git/attributes"
+"git/ignore" = "~/.config/git/ignore"
+
 [editorconfig.files]
 "editorconfig" = "~/.editorconfig"

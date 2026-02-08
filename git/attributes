@@ -1,0 +1,48 @@
+# Safety net for repos without their own .gitattributes
+* text=auto
+
+# Binary files that auto-detection occasionally misses
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.webp binary
+*.avif binary
+*.woff binary
+*.woff2 binary
+*.ttf binary
+*.otf binary
+*.eot binary
+*.pdf binary
+*.zip binary
+*.gz binary
+*.7z binary
+*.tar binary
+*.exe binary
+*.dll binary
+*.so binary
+*.dylib binary
+*.wasm binary
+*.sqlite binary
+*.db binary
+
+# Language-aware diff hunk headers (built-in drivers)
+*.go        diff=golang
+*.rs        diff=rust
+*.kt        diff=kotlin
+*.kts       diff=kotlin
+*.py        diff=python
+*.java      diff=java
+*.html      diff=html
+*.css       diff=css
+*.md        diff=markdown
+*.sh        diff=bash
+*.bash      diff=bash
+
+# TypeScript/JavaScript — no built-in driver, cpp is the best approximation
+*.ts        diff=cpp
+*.tsx       diff=cpp
+*.js        diff=cpp
+*.jsx       diff=cpp
+*.mjs       diff=cpp
