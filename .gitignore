@@ -1,4 +1,4 @@
-# Machine-specific dotter config (NEVER commit these)
+# Dotter machine-specific config (NEVER commit)
 .dotter/local.toml
 .dotter/cache.toml
 .dotter/cache/
