@@ -1,5 +1,5 @@
-# Safety net for repos without their own .gitattributes
-* text=auto
+# Global gitattributes — applied to all repos
+* text=auto eol=lf
 
 # Binary files that auto-detection occasionally misses
 *.png binary
