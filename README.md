@@ -8,6 +8,8 @@ Replaces my archived [mac dotfiles](https://github.com/robvenn/dotfiles-macos-ol
 
 - **[Dotter](https://github.com/SuperCuber/dotter)** for symlink management with plain git
 - **[Nushell](https://www.nushell.sh/)** ([repo](https://github.com/nushell/nushell)) as primary interactive shell, with minimal bash/zsh/PowerShell configs maintained for compatibility with system tools
+- **[mise](https://mise.jdx.dev/)** for Node.js version management
+- **Core CLI tools**: [bat](https://github.com/sharkdp/bat), [ripgrep](https://github.com/BurntSushi/ripgrep), [fd](https://github.com/sharkdp/fd), [fzf](https://github.com/junegunn/fzf), [zoxide](https://github.com/ajeetdsouza/zoxide)
 
 ## Configs
 
@@ -19,6 +21,7 @@ Replaces my archived [mac dotfiles](https://github.com/robvenn/dotfiles-macos-ol
 | `bat/` | `~/.config/bat/` | Output style and pager |
 | `ripgrep/` | `~/.config/ripgrep/` | Smart-case, hidden files, glob exclusions |
 | `fzf/` | `~/.config/fzf/` | Layout, border, bat preview |
+| `mise/` | `~/.config/mise/` | Global Node.js LTS version |
 
 ## Conventions
 

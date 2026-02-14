@@ -22,3 +22,6 @@ depends = []
 
 [fzf.files]
 "fzf/config" = "~/.config/fzf/config"
+
+[mise.files]
+"mise/config.toml" = "~/.config/mise/config.toml"

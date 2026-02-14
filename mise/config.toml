@@ -1,0 +1,5 @@
+[tools]
+node = "lts"
+
+[settings]
+trusted_config_paths = ["~/Dev/"]
