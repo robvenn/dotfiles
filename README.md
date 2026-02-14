@@ -16,6 +16,9 @@ Replaces my archived [mac dotfiles](https://github.com/robvenn/dotfiles-macos-ol
 | `nushell/` | `~/.config/nushell/` | Shell config (delta overrides) |
 | `git/` | `~/.config/git/` | Global git config, attributes, ignore |
 | `editorconfig` | `~/.editorconfig` | Cross-editor LF + indent settings |
+| `bat/` | `~/.config/bat/` | Output style and pager |
+| `ripgrep/` | `~/.config/ripgrep/` | Smart-case, hidden files, glob exclusions |
+| `fzf/` | `~/.config/fzf/` | Layout, border, bat preview |
 
 ## Conventions
 

@@ -13,3 +13,12 @@ depends = []
 
 [editorconfig.files]
 "editorconfig" = "~/.editorconfig"
+
+[bat.files]
+"bat/config" = "~/.config/bat/config"
+
+[ripgrep.files]
+"ripgrep/config" = "~/.config/ripgrep/config"
+
+[fzf.files]
+"fzf/config" = "~/.config/fzf/config"
