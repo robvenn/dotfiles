@@ -1,0 +1,11 @@
+# Windows-specific target path overrides
+# Included via local.toml on Windows machines
+# Only override tools that don't respect XDG_CONFIG_HOME on Windows
+
+[helix.files]
+"helix/config.toml" = "~/AppData/Roaming/helix/config.toml"
+"helix/languages.toml" = "~/AppData/Roaming/helix/languages.toml"
+
+[zed.files]
+"zed/settings.json" = "~/AppData/Roaming/Zed/settings.json"
+"zed/keymap.json" = "~/AppData/Roaming/Zed/keymap.json"

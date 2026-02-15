@@ -25,3 +25,17 @@ depends = []
 
 [mise.files]
 "mise/config.toml" = "~/.config/mise/config.toml"
+
+[helix]
+depends = []
+
+[helix.files]
+"helix/config.toml" = "~/.config/helix/config.toml"
+"helix/languages.toml" = "~/.config/helix/languages.toml"
+
+[zed]
+depends = []
+
+[zed.files]
+"zed/settings.json" = "~/.config/zed/settings.json"
+"zed/keymap.json" = "~/.config/zed/keymap.json"

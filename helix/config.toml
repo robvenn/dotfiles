@@ -1,0 +1,37 @@
+[editor]
+line-number = "relative"
+cursorline = true
+color-modes = true
+bufferline = "multiple"
+default-line-ending = "lf"
+popup-border = "all"
+end-of-line-diagnostics = "hint"
+
+[editor.cursor-shape]
+insert = "bar"
+select = "underline"
+
+[editor.indent-guides]
+render = true
+
+[editor.soft-wrap]
+enable = true
+
+[editor.statusline]
+center = ["version-control"]
+
+[editor.lsp]
+display-inlay-hints = true
+
+[editor.inline-diagnostics]
+cursor-line = "warning"
+
+[editor.auto-save]
+focus-lost = true
+
+[keys.normal]
+C-s = ":w"
+
+[keys.insert]
+j = { k = "normal_mode" }
+C-s = [":w"]

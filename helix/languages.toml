@@ -1,0 +1,76 @@
+[language-server.typescript-language-server]
+command = "typescript-language-server"
+args = ["--stdio"]
+config.hostInfo = "helix"
+
+[language-server.biome]
+command = "biome"
+args = ["lsp-proxy"]
+required-root-patterns = ["biome.json", "biome.jsonc"]
+
+[[language]]
+name = "typescript"
+language-servers = [
+  { name = "typescript-language-server", except-features = ["format"] },
+  "biome",
+]
+auto-format = true
+
+[[language]]
+name = "tsx"
+language-servers = [
+  { name = "typescript-language-server", except-features = ["format"] },
+  "biome",
+]
+auto-format = true
+
+[[language]]
+name = "javascript"
+language-servers = [
+  { name = "typescript-language-server", except-features = ["format"] },
+  "biome",
+]
+auto-format = true
+
+[[language]]
+name = "jsx"
+language-servers = [
+  { name = "typescript-language-server", except-features = ["format"] },
+  "biome",
+]
+auto-format = true
+
+[language-server.gopls.config]
+gofumpt = true
+"ui.diagnostic.staticcheck" = true
+
+[[language]]
+name = "go"
+auto-format = true
+language-servers = ["gopls"]
+
+[language-server.rust-analyzer.config.cargo]
+features = "all"
+targetDir = true
+
+[language-server.rust-analyzer.config]
+procMacro.enable = true
+
+[[language]]
+name = "json"
+auto-format = true
+
+[[language]]
+name = "toml"
+auto-format = true
+
+[language-server.yaml-language-server.config.yaml]
+validation = true
+format = { enable = true }
+
+[language-server.yaml-language-server.config.yaml.schemaStore]
+enable = true
+
+[[language]]
+name = "yaml"
+auto-format = true

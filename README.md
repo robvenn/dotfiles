@@ -13,15 +13,17 @@ Replaces my archived [mac dotfiles](https://github.com/robvenn/dotfiles-macos-ol
 
 ## Configs
 
-| Path | Deploys to | Purpose |
-|------|-----------|---------|
-| `nushell/` | `~/.config/nushell/` | Shell config (delta overrides) |
-| `git/` | `~/.config/git/` | Global git config, attributes, ignore |
-| `editorconfig` | `~/.editorconfig` | Cross-editor LF + indent settings |
-| `bat/` | `~/.config/bat/` | Output style and pager |
-| `ripgrep/` | `~/.config/ripgrep/` | Smart-case, hidden files, glob exclusions |
-| `fzf/` | `~/.config/fzf/` | Layout, border, bat preview |
-| `mise/` | `~/.config/mise/` | Global Node.js LTS version |
+| Path | Tool |
+|------|------|
+| `nushell/` | Primary interactive shell |
+| `git/` | Version control (config, attributes, global ignore) |
+| `helix/` | Terminal editor + language server configs |
+| `zed/` | Desktop editor |
+| `bat/` | `cat` replacement with syntax highlighting |
+| `ripgrep/` | Fast text search |
+| `fzf/` | Fuzzy finder |
+| `mise/` | Node.js version management |
+| `editorconfig` | Cross-editor formatting defaults |
 
 ## Conventions
 

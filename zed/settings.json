@@ -1,0 +1,12 @@
+{
+  "base_keymap": "JetBrains",
+  "line_ending": "unix",
+  "terminal": {
+    "shell": {
+      "program": "nu"
+    }
+  },
+  "status_bar": {
+    "experimental.show": true
+  }
+}
