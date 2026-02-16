@@ -9,6 +9,7 @@ Replaces my archived [mac dotfiles](https://github.com/robvenn/dotfiles-macos-ol
 - **[Dotter](https://github.com/SuperCuber/dotter)** for symlink management with plain git
 - **[Nushell](https://www.nushell.sh/)** ([repo](https://github.com/nushell/nushell)) as primary interactive shell, with minimal bash/zsh/PowerShell configs maintained for compatibility with system tools
 - **[mise](https://mise.jdx.dev/)** for Node.js version management
+- **Git ecosystem**: [delta](https://github.com/dandavison/delta) (syntax-highlighted diffs), [difftastic](https://github.com/Wilfred/difftastic) (structural diffs), [mergiraf](https://github.com/qundao/mergiraf) (structured merge driver)
 - **Core CLI tools**: [bat](https://github.com/sharkdp/bat), [ripgrep](https://github.com/BurntSushi/ripgrep), [fd](https://github.com/sharkdp/fd), [fzf](https://github.com/junegunn/fzf), [zoxide](https://github.com/ajeetdsouza/zoxide)
 
 ## Configs

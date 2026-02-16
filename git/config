@@ -52,6 +52,30 @@
 [core]
     autocrlf = false
     untrackedCache = true
+    pager = delta
+
+[interactive]
+    diffFilter = delta --color-only
+
+[delta]
+    navigate = true
+    line-numbers = true
+    hyperlinks = true
+
+[merge "mergiraf"]
+    name = mergiraf
+    driver = mergiraf merge --git %O %A %B -s %S -x %X -y %Y -p %P
+
+[alias]
+    dft = -c diff.external=difft diff
+    dftlog = -c diff.external=difft log -p --ext-diff
+    dftshow = -c diff.external=difft show --ext-diff
+    lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+    undo = reset --soft HEAD~1
+    amend = commit --amend --no-edit
+    fixup = commit --fixup
+    pushf = push --force-with-lease
+    unstage = restore --staged
 
 [pack]
     threads = 0
