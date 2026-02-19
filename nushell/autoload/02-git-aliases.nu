@@ -1,5 +1,4 @@
 # 02-git-aliases.nu — Git shell aliases for interactive use
-# Follows oh-my-zsh naming where possible; gsw replaces gco (git switch > git checkout)
 
 alias gst = git status
 alias ga = git add

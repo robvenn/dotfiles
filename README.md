@@ -7,24 +7,26 @@ Replaces my archived [mac dotfiles](https://github.com/robvenn/dotfiles-macos-ol
 ## Stack
 
 - **[Dotter](https://github.com/SuperCuber/dotter)** for symlink management with plain git
-- **[Nushell](https://www.nushell.sh/)** ([repo](https://github.com/nushell/nushell)) as primary interactive shell, with minimal bash/zsh/PowerShell configs maintained for compatibility with system tools
+- **[Nushell](https://www.nushell.sh/)** as primary interactive shell, with **[Starship](https://starship.rs/)** prompt
+- **[Helix](https://helix-editor.com/)** and **[Zed](https://zed.dev/)** as editors
 - **[mise](https://mise.jdx.dev/)** for Node.js version management
-- **Git ecosystem**: [delta](https://github.com/dandavison/delta) (syntax-highlighted diffs), [difftastic](https://github.com/Wilfred/difftastic) (structural diffs), [mergiraf](https://github.com/qundao/mergiraf) (structured merge driver)
-- **Core CLI tools**: [bat](https://github.com/sharkdp/bat), [ripgrep](https://github.com/BurntSushi/ripgrep), [fd](https://github.com/sharkdp/fd), [fzf](https://github.com/junegunn/fzf), [zoxide](https://github.com/ajeetdsouza/zoxide)
+- **Git ecosystem**: [delta](https://github.com/dandavison/delta), [difftastic](https://github.com/Wilfred/difftastic), [mergiraf](https://mergiraf.org/)
+- **CLI tools**: [bat](https://github.com/sharkdp/bat), [ripgrep](https://github.com/BurntSushi/ripgrep), [fd](https://github.com/sharkdp/fd), [fzf](https://github.com/junegunn/fzf), [sd](https://github.com/chmln/sd), [eza](https://github.com/eza-community/eza), [zoxide](https://github.com/ajeetdsouza/zoxide), [bottom](https://github.com/ClementTsang/bottom)
+- **Tooling**: [topgrade](https://github.com/topgrade-rs/topgrade), [taplo](https://taplo.tamasfe.dev/), [Biome](https://biomejs.dev/)
 
-## Configs
+## Bootstrap
 
-| Path | Tool |
-|------|------|
-| `nushell/` | Primary interactive shell |
-| `git/` | Version control (config, attributes, global ignore) |
-| `helix/` | Terminal editor + language server configs |
-| `zed/` | Desktop editor |
-| `bat/` | `cat` replacement with syntax highlighting |
-| `ripgrep/` | Fast text search |
-| `fzf/` | Fuzzy finder |
-| `mise/` | Node.js version management |
-| `editorconfig` | Cross-editor formatting defaults |
+**Windows (PowerShell):**
+
+```powershell
+irm https://raw.githubusercontent.com/robvenn/dotfiles/main/scripts/bootstrap.ps1 | iex
+```
+
+**macOS/Linux (bash):**
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/robvenn/dotfiles/main/scripts/bootstrap.sh | bash
+```
 
 ## Conventions
 
