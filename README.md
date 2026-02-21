@@ -12,7 +12,7 @@ Replaces my archived [mac dotfiles](https://github.com/robvenn/dotfiles-macos-ol
 - **[mise](https://mise.jdx.dev/)** for Node.js version management
 - **Git ecosystem**: [delta](https://github.com/dandavison/delta), [difftastic](https://github.com/Wilfred/difftastic), [mergiraf](https://mergiraf.org/)
 - **CLI tools**: [bat](https://github.com/sharkdp/bat), [ripgrep](https://github.com/BurntSushi/ripgrep), [fd](https://github.com/sharkdp/fd), [fzf](https://github.com/junegunn/fzf), [sd](https://github.com/chmln/sd), [eza](https://github.com/eza-community/eza), [zoxide](https://github.com/ajeetdsouza/zoxide), [bottom](https://github.com/ClementTsang/bottom)
-- **Tooling**: [topgrade](https://github.com/topgrade-rs/topgrade), [taplo](https://taplo.tamasfe.dev/), [Biome](https://biomejs.dev/)
+- **Tooling**: [topgrade](https://github.com/topgrade-rs/topgrade), [taplo](https://taplo.tamasfe.dev/), [Biome](https://biomejs.dev/), [marksman](https://github.com/artempyanykh/marksman)
 
 ## Bootstrap
 

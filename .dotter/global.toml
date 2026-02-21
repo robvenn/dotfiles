@@ -40,3 +40,6 @@ depends = []
 [zed.files]
 "zed/settings.json" = "~/.config/zed/settings.json"
 "zed/keymap.json" = "~/.config/zed/keymap.json"
+
+[starship.files]
+"starship/starship.toml" = "~/.config/starship.toml"

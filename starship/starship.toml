@@ -1,0 +1,4 @@
+right_format = "$status"
+
+[status]
+disabled = false
