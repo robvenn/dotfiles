@@ -7,19 +7,27 @@
     ],
     "apps": [
         {
-            "Name": "nu",
+            "Name": "bat",
+            "Source": "main"
+        },
+        {
+            "Name": "biome",
+            "Source": "main"
+        },
+        {
+            "Name": "bottom",
+            "Source": "main"
+        },
+        {
+            "Name": "delta",
+            "Source": "main"
+        },
+        {
+            "Name": "difftastic",
             "Source": "main"
         },
         {
             "Name": "dotter",
-            "Source": "main"
-        },
-        {
-            "Name": "mise",
-            "Source": "main"
-        },
-        {
-            "Name": "bat",
             "Source": "main"
         },
         {
@@ -35,31 +43,11 @@
             "Source": "main"
         },
         {
-            "Name": "zoxide",
-            "Source": "main"
-        },
-        {
-            "Name": "ripgrep",
-            "Source": "main"
-        },
-        {
-            "Name": "starship",
-            "Source": "main"
-        },
-        {
             "Name": "helix",
             "Source": "main"
         },
         {
-            "Name": "sd",
-            "Source": "main"
-        },
-        {
-            "Name": "delta",
-            "Source": "main"
-        },
-        {
-            "Name": "difftastic",
+            "Name": "marksman",
             "Source": "main"
         },
         {
@@ -67,11 +55,27 @@
             "Source": "main"
         },
         {
-            "Name": "taplo",
+            "Name": "mise",
             "Source": "main"
         },
         {
-            "Name": "biome",
+            "Name": "nu",
+            "Source": "main"
+        },
+        {
+            "Name": "ripgrep",
+            "Source": "main"
+        },
+        {
+            "Name": "sd",
+            "Source": "main"
+        },
+        {
+            "Name": "starship",
+            "Source": "main"
+        },
+        {
+            "Name": "taplo",
             "Source": "main"
         },
         {
@@ -79,7 +83,7 @@
             "Source": "main"
         },
         {
-            "Name": "bottom",
+            "Name": "zoxide",
             "Source": "main"
         }
     ]

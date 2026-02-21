@@ -3,10 +3,23 @@ command = "typescript-language-server"
 args = ["--stdio"]
 config.hostInfo = "helix"
 
-[language-server.biome]
-command = "biome"
-args = ["lsp-proxy"]
-required-root-patterns = ["biome.json", "biome.jsonc"]
+[language-server.gopls.config]
+gofumpt = true
+"ui.diagnostic.staticcheck" = true
+
+[language-server.rust-analyzer.config.cargo]
+features = "all"
+targetDir = true
+
+[language-server.rust-analyzer.config]
+procMacro.enable = true
+
+[language-server.yaml-language-server.config.yaml]
+validation = true
+format = { enable = true }
+
+[language-server.yaml-language-server.config.yaml.schemaStore]
+enable = true
 
 [[language]]
 name = "typescript"
@@ -40,37 +53,32 @@ language-servers = [
 ]
 auto-format = true
 
-[language-server.gopls.config]
-gofumpt = true
-"ui.diagnostic.staticcheck" = true
-
-[[language]]
-name = "go"
-auto-format = true
-language-servers = ["gopls"]
-
-[language-server.rust-analyzer.config.cargo]
-features = "all"
-targetDir = true
-
-[language-server.rust-analyzer.config]
-procMacro.enable = true
-
 [[language]]
 name = "json"
+language-servers = ["biome", "vscode-json-language-server"]
+auto-format = true
+
+[[language]]
+name = "jsonc"
+language-servers = ["biome", "vscode-json-language-server"]
+auto-format = true
+
+[[language]]
+name = "css"
+language-servers = ["biome", "vscode-css-language-server"]
+auto-format = true
+
+[[language]]
+name = "rust"
+language-servers = ["rust-analyzer"]
 auto-format = true
 
 [[language]]
 name = "toml"
+language-servers = ["taplo"]
 auto-format = true
-
-[language-server.yaml-language-server.config.yaml]
-validation = true
-format = { enable = true }
-
-[language-server.yaml-language-server.config.yaml.schemaStore]
-enable = true
 
 [[language]]
 name = "yaml"
+language-servers = ["yaml-language-server"]
 auto-format = true
