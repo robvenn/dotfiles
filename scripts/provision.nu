@@ -137,52 +137,6 @@ if (has-command "mise") {
     warn "mise not found -- skipping runtime installation"
 }
 
-# ── npm Globals (LSPs) ───────────────────────────────────────────────────────
-
-print ""
-print "==> npm Globals (LSPs)"
-
-if (has-command "npm") {
-    let npm_packages = [
-        "typescript"
-        "typescript-language-server"
-        "yaml-language-server"
-        "vscode-langservers-extracted"
-    ]
-    info $"Installing: ($npm_packages | str join ', ')..."
-    try {
-        ^npm i -g ...$npm_packages
-        success "npm globals installed"
-    } catch {
-        warn "npm global install failed"
-    }
-} else {
-    warn "npm not found -- skipping LSP installation (install Node.js via mise first)"
-}
-
-# ── Go Tools ─────────────────────────────────────────────────────────────────
-
-print ""
-print "==> Go Tools"
-
-if (has-command "go") {
-    let go_tools = [
-        "golang.org/x/tools/gopls@latest"
-        "github.com/nao1215/gup@latest"
-    ]
-    for tool in $go_tools {
-        info $"Installing ($tool)..."
-        try {
-            ^go install $tool
-            success $"($tool) installed"
-        } catch {
-            warn $"go install ($tool) failed"
-        }
-    }
-} else {
-    warn "go not found -- skipping Go tools (install Go via scoop/brew first)"
-}
-
 # ── Vendor Autoload (Shell Integrations) ──────────────────────────────────────
 
 print ""

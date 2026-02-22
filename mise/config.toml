@@ -1,5 +1,16 @@
 [tools]
 node = "lts"
 
+# npm globals
+"npm:typescript" = "latest"
+"npm:typescript-language-server" = "latest"
+"npm:yaml-language-server" = "latest"
+"npm:vscode-langservers-extracted" = "latest"
+
+# go tools
+"go:golang.org/x/tools/gopls" = "latest"
+"go:github.com/nao1215/gup" = "latest"
+"go:github.com/sqlc-dev/sqlc/cmd/sqlc" = "latest"
+
 [settings]
 trusted_config_paths = ["~/Dev/"]

@@ -43,6 +43,14 @@
             "Source": "main"
         },
         {
+            "Name": "gh",
+            "Source": "main"
+        },
+        {
+            "Name": "go",
+            "Source": "main"
+        },
+        {
             "Name": "helix",
             "Source": "main"
         },
@@ -80,6 +88,10 @@
         },
         {
             "Name": "topgrade",
+            "Source": "main"
+        },
+        {
+            "Name": "uv",
             "Source": "main"
         },
         {
