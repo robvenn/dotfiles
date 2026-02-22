@@ -9,3 +9,6 @@
 [zed.files]
 "zed/settings.json" = "~/AppData/Roaming/Zed/settings.json"
 "zed/keymap.json" = "~/AppData/Roaming/Zed/keymap.json"
+
+[topgrade.files]
+"topgrade/topgrade.toml" = "~/AppData/Roaming/topgrade.toml"

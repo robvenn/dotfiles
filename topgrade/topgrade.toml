@@ -1,0 +1,14 @@
+# Config path: %APPDATA%\topgrade.toml (Windows) | ~/.config/topgrade.toml (macOS)
+# Topgrade ignores XDG_CONFIG_HOME on Windows — see .dotter/windows.toml for the override.
+
+[misc]
+# node: npm globals are managed by mise — disable to avoid conflicts
+# mise: built-in step runs `mise upgrade`; [commands] uses `mise install` instead (respects version pins)
+disable = ["node", "mise"]
+
+[commands]
+# mise install is declarative (respects config.toml pins); use `mise upgrade` to bump to latest
+"Mise ecosystem install" = "mise install"
+
+[post_commands]
+"Scoop cleanup" = "scoop cleanup *"

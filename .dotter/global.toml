@@ -43,3 +43,6 @@ depends = []
 
 [starship.files]
 "starship/starship.toml" = "~/.config/starship.toml"
+
+[topgrade.files]
+"topgrade/topgrade.toml" = "~/.config/topgrade.toml"
