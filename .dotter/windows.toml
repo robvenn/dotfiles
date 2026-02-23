@@ -1,5 +1,10 @@
-# Windows-specific target path overrides
+# Windows-specific target path overrides and template variables
 # Included via local.toml on Windows machines
+
+# OS variable for Handlebars templates — must match the os value checked in templates
+[ssh.variables]
+os = "windows"
+
 # Only override tools that don't respect XDG_CONFIG_HOME on Windows
 
 [helix.files]

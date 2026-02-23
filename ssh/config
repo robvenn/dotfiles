@@ -1,0 +1,15 @@
+Include config.local
+
+# Personal GitHub — explicit host alias for testing and optional use
+Host github.com-personal
+    HostName github.com
+    User git
+    IdentitiesOnly yes
+
+# Additional host aliases are in ~/.ssh/config.local
+
+# Default GitHub — identity resolved via config.local
+Host github.com
+    HostName github.com
+    User git
+    IdentitiesOnly yes

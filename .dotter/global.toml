@@ -11,6 +11,11 @@ depends = []
 "git/config" = "~/.config/git/config"
 "git/attributes" = "~/.config/git/attributes"
 "git/ignore" = "~/.config/git/ignore"
+"git/config-local.template" = { target = "~/.config/git/config-local", type = "template" }
+
+[ssh.files]
+"ssh/config" = "~/.ssh/config"
+"ssh/config.local.template" = { target = "~/.ssh/config.local", type = "template" }
 
 [editorconfig.files]
 "editorconfig" = "~/.editorconfig"

@@ -19,6 +19,7 @@
 
 [tag]
     sort = version:refname
+    gpgSign = true
 
 [diff]
     algorithm = histogram
@@ -38,6 +39,7 @@
 
 [commit]
     verbose = true
+    gpgSign = true
 
 [help]
     autocorrect = prompt
@@ -53,6 +55,7 @@
     autocrlf = false
     untrackedCache = true
     pager = delta
+    editor = hx
 
 [interactive]
     diffFilter = delta --color-only
@@ -81,3 +84,14 @@
 
 [pack]
     threads = 0
+
+[gpg]
+    format = ssh
+
+[gpg "ssh"]
+    allowedSignersFile = ~/.ssh/allowed_signers
+
+# Machine-specific identity — see git/config-local.template
+# Note: signing will fail until keys are generated and config-local is populated — expected and intentional
+[include]
+    path = config-local
