@@ -110,7 +110,7 @@ if [ -f "$local_toml" ]; then
 else
     info "Creating local.toml for macOS..."
     cat > "$local_toml" << 'EOF'
-packages = ["nushell", "git", "editorconfig", "bat", "ripgrep", "fzf", "mise", "helix", "zed"]
+packages = ["nushell", "git", "ssh", "editorconfig", "bat", "ripgrep", "fzf", "mise", "helix", "zed", "starship", "topgrade"]
 EOF
     success "local.toml created"
 fi

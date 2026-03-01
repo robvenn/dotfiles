@@ -13,6 +13,9 @@ depends = []
 "git/ignore" = "~/.config/git/ignore"
 "git/config-local.template" = { target = "~/.config/git/config-local", type = "template" }
 
+[ssh.variables]
+os = ""
+
 [ssh.files]
 "ssh/config" = "~/.ssh/config"
 "ssh/config.local.template" = { target = "~/.ssh/config.local", type = "template" }

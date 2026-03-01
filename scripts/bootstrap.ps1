@@ -155,7 +155,7 @@ if (Test-Path $localToml) {
     Write-Info "Creating local.toml for Windows..."
     @'
 includes = [".dotter/windows.toml"]
-packages = ["nushell", "git", "editorconfig", "bat", "ripgrep", "fzf", "mise", "helix", "zed"]
+packages = ["nushell", "git", "ssh", "editorconfig", "bat", "ripgrep", "fzf", "mise", "helix", "zed", "starship", "topgrade"]
 '@ | Set-Content -Path $localToml -NoNewline
     Write-Success "local.toml created"
 }
