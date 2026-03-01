@@ -9,6 +9,3 @@ disable = ["node", "mise"]
 [commands]
 # mise install is declarative (respects config.toml pins); use `mise upgrade` to bump to latest
 "Mise ecosystem install" = "mise install"
-
-[post_commands]
-"Scoop cleanup" = "scoop cleanup *"
