@@ -1,0 +1,5 @@
+# Sourced for every zsh session (interactive, non-interactive, login, script).
+. "$HOME/.config/shell/env.sh"
+
+# Let non-interactive bash subprocesses (bash -c "...") inherit env vars too.
+export BASH_ENV="$HOME/.config/shell/env.sh"

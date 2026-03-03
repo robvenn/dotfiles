@@ -1,3 +1,11 @@
+[shell.files]
+"shell/env.sh" = "~/.config/shell/env.sh"
+
+[zsh.files]
+"zsh/zshenv" = "~/.zshenv"
+"zsh/zprofile" = "~/.zprofile"
+"zsh/zshrc" = "~/.zshrc"
+
 [nushell]
 depends = []
 

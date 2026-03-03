@@ -1,0 +1,20 @@
+# Interactive shells only.
+#
+# On Linux, some terminals open non-login interactive shells where zprofile
+# never ran, so we repeat the PATH setup here. On macOS this is redundant
+# but harmless — typeset -U path deduplicates.
+
+. "$HOME/.config/shell/env.sh"
+
+if [ -x /opt/homebrew/bin/brew ]; then
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+elif [ -x /usr/local/bin/brew ]; then
+    eval "$(/usr/local/bin/brew shellenv)"
+fi
+[ -f "$HOME/.cargo/env" ] && . "$HOME/.cargo/env"
+command -v mise >/dev/null 2>&1 && eval "$(mise activate zsh --shims)"
+[ -d "$HOME/.local/bin" ] && export PATH="$HOME/.local/bin:$PATH"
+
+typeset -U path
+
+[ -f "$HOME/.zshrc.local" ] && . "$HOME/.zshrc.local"

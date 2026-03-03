@@ -1,19 +1,5 @@
-# env.nu — Environment variables and PATH
-# Runs before vendor autoload and config.nu
-# See: https://www.nushell.sh/book/configuration.html
-
-# ---------------------------------------------------------------------------
-# Editor
-# ---------------------------------------------------------------------------
-
-$env.EDITOR = "hx"
-$env.VISUAL = $env.EDITOR
-
-# ---------------------------------------------------------------------------
-# Tool config paths
-# ---------------------------------------------------------------------------
-
-$env.BAT_CONFIG_PATH = ($nu."home-dir" | path join ".config" "bat" "config")
-$env.RIPGREP_CONFIG_PATH = ($nu."home-dir" | path join ".config" "ripgrep" "config")
-$env.FZF_DEFAULT_OPTS_FILE = ($nu."home-dir" | path join ".config" "fzf" "config")
-$env.FZF_DEFAULT_COMMAND = "fd --type f --hidden --follow --exclude .git"
+# Nushell environment — runs before vendor autoload and config.nu.
+#
+# Env vars and PATH are inherited from the parent process.
+# See shell/env.sh (POSIX) and scripts/bootstrap.ps1 (Windows)
+# for the canonical variable definitions.

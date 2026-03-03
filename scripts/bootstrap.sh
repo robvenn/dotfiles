@@ -110,9 +110,29 @@ if [ -f "$local_toml" ]; then
 else
     info "Creating local.toml for macOS..."
     cat > "$local_toml" << 'EOF'
-packages = ["nushell", "git", "ssh", "editorconfig", "bat", "ripgrep", "fzf", "mise", "helix", "zed", "starship", "topgrade"]
+packages = ["shell", "zsh", "nushell", "git", "ssh", "editorconfig", "bat", "ripgrep", "fzf", "mise", "helix", "zed", "starship", "topgrade"]
 EOF
     success "local.toml created"
+fi
+
+# ── Shell Config Migration ────────────────────────────────────────────────────
+# Dotter will replace ~/.zshrc with a symlink to a thin loader that sources
+# ~/.zshrc.local at the end. On existing machines, move the current ~/.zshrc
+# to ~/.zshrc.local so nothing is lost.
+
+echo ""
+echo "==> Shell Config Migration"
+
+if [ -f "$HOME/.zshrc" ] && [ ! -L "$HOME/.zshrc" ] && [ ! -f "$HOME/.zshrc.local" ]; then
+    info "Moving ~/.zshrc to ~/.zshrc.local (will be sourced by managed ~/.zshrc)..."
+    mv "$HOME/.zshrc" "$HOME/.zshrc.local"
+    success "~/.zshrc moved — review ~/.zshrc.local and clean up any duplicated settings"
+elif [ -L "$HOME/.zshrc" ]; then
+    success "~/.zshrc already managed by dotter"
+elif [ -f "$HOME/.zshrc.local" ]; then
+    success "~/.zshrc.local already exists"
+else
+    success "No existing ~/.zshrc — fresh install"
 fi
 
 # ── Dotter Deploy ─────────────────────────────────────────────────────────────

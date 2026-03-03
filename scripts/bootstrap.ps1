@@ -123,6 +123,9 @@ Set-PersistentEnv "XDG_DATA_HOME"   "$env:USERPROFILE\.local\share"
 Set-PersistentEnv "XDG_STATE_HOME"  "$env:USERPROFILE\.local\state"
 Set-PersistentEnv "XDG_CACHE_HOME"  "$env:USERPROFILE\.cache"
 
+Set-PersistentEnv "EDITOR" "hx"
+Set-PersistentEnv "VISUAL" "hx"
+
 Set-PersistentEnv "BAT_CONFIG_PATH"       "$env:USERPROFILE\.config\bat\config"
 Set-PersistentEnv "RIPGREP_CONFIG_PATH"   "$env:USERPROFILE\.config\ripgrep\config"
 Set-PersistentEnv "FZF_DEFAULT_OPTS_FILE" "$env:USERPROFILE\.config\fzf\config"
