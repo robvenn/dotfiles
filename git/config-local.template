@@ -3,8 +3,5 @@
     email = {{default_email}}
     signingKey = {{default_signing_key}}
 
-# Per-client identity overrides — append manually, one block per client.
-# These are NOT managed by Dotter.
-#
-# [includeIf "gitdir/i:~/acme/"]
-#     path = ~/.config/git/config-acme
+[include]
+    path = config-profiles

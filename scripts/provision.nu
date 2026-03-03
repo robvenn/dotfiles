@@ -41,7 +41,7 @@ if $os == "windows" {
     if ($brewfile | path exists) {
         info "Installing Homebrew packages..."
         try {
-            ^brew bundle --file=$brewfile --no-lock
+            ^brew bundle --file=$brewfile
             success "Homebrew packages installed"
         } catch {
             warn "brew bundle failed -- some packages may need manual install"

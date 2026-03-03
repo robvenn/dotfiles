@@ -1,0 +1,9 @@
+# Machine-specific SSH — values from .dotter/local.toml [ssh.variables]
+
+Host github.com
+    IdentityFile {{ssh_identity_file}}
+    HostName {{ssh_github_hostname}}
+    Port {{ssh_github_port}}
+    AddKeysToAgent yes
+{{#if ssh_use_keychain}}    UseKeychain yes
+{{/if}}

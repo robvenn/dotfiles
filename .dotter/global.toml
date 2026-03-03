@@ -18,7 +18,7 @@ os = ""
 
 [ssh.files]
 "ssh/config" = "~/.ssh/config"
-"ssh/config.local.template" = { target = "~/.ssh/config.local", type = "template" }
+"ssh/config-local.template" = { target = "~/.ssh/config.local", type = "template" }
 
 [editorconfig.files]
 "editorconfig" = "~/.editorconfig"
