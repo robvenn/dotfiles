@@ -8,6 +8,7 @@ alias gcm = git commit -m
 alias gd = git diff
 alias gds = git diff --staged
 alias gp = git push
+alias gpf = git push --force-with-lease
 alias gl = git pull
 alias gsw = git switch
 alias gcb = git switch -c

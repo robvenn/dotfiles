@@ -47,6 +47,10 @@
             "Source": "main"
         },
         {
+            "Name": "git-lfs",
+            "Source": "main"
+        },
+        {
             "Name": "go",
             "Source": "main"
         },
