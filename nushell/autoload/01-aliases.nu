@@ -8,3 +8,5 @@ alias lt = ^eza --tree --level=2 --icons
 
 # bat as cat — safe in Nushell (no built-in cat to shadow)
 alias cat = ^bat
+
+alias h = history

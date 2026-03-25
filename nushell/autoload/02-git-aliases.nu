@@ -15,6 +15,13 @@ alias gcb = git switch -c
 alias grb = git rebase
 alias gsta = git stash push
 alias gstp = git stash pop
+alias gb = git branch
+alias gw = git worktree
+alias gwa = git worktree add
+alias gwr = git worktree remove
+alias gwrf = git worktree remove --force
+alias gwl = git worktree list
+alias gre = git restore
 
 def --env grt [] { cd (git rev-parse --show-toplevel) }
 
