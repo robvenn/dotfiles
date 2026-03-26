@@ -144,6 +144,15 @@ info "Deploying dotfiles..."
 (cd "$DOTFILES_DIR" && dotter deploy)
 success "Dotfiles deployed"
 
+# ── macOS Defaults ────────────────────────────────────────────────────────
+
+echo ""
+echo "==> macOS Defaults"
+
+info "Applying macOS defaults..."
+bash "$DOTFILES_DIR/scripts/macos-defaults.sh"
+success "macOS defaults applied"
+
 # ── Summary ───────────────────────────────────────────────────────────────────
 
 echo ""
