@@ -22,6 +22,7 @@ $RECYCLE.BIN/
 
 # direnv
 .direnv/
+.envrc
 
 # Tags
 tags
