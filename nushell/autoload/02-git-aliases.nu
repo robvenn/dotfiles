@@ -22,6 +22,7 @@ alias gwr = git worktree remove
 alias gwrf = git worktree remove --force
 alias gwl = git worktree list
 alias gre = git restore
+alias gcl = git clean
 
 def --env grt [] { cd (git rev-parse --show-toplevel) }
 
