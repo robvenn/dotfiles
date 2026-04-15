@@ -1,29 +1,29 @@
-# 02-git-aliases.nu — Git shell aliases for interactive use
+# 02-git.nu — Git aliases and utilities for interactive use
 
-alias gst = git status
 alias ga = git add
 alias gaa = git add --all
+alias gb = git branch
 alias gc = git commit
+alias gcb = git switch -c
+alias gcl = git clean
 alias gcm = git commit -m
+alias gcp = git cherry-pick
 alias gd = git diff
 alias gds = git diff --staged
+alias gl = git pull
 alias gp = git push
 alias gpf = git push --force-with-lease
-alias gl = git pull
-alias gsw = git switch
-alias gcb = git switch -c
 alias grb = git rebase
+alias gre = git restore
+alias gst = git status
 alias gsta = git stash push
 alias gstp = git stash pop
-alias gb = git branch
+alias gsw = git switch
 alias gw = git worktree
 alias gwa = git worktree add
+alias gwl = git worktree list
 alias gwr = git worktree remove
 alias gwrf = git worktree remove --force
-alias gwl = git worktree list
-alias gre = git restore
-alias gcl = git clean
-alias gcp = git cherry-pick
 
 def --env grt [] { cd (git rev-parse --show-toplevel) }
 
