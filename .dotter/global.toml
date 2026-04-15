@@ -14,6 +14,7 @@ depends = []
 "nushell/env.nu" = "~/.config/nushell/env.nu"
 "nushell/autoload/01-aliases.nu" = "~/.config/nushell/autoload/01-aliases.nu"
 "nushell/autoload/02-git-aliases.nu" = "~/.config/nushell/autoload/02-git-aliases.nu"
+"nushell/autoload/03-functions.nu" = "~/.config/nushell/autoload/03-functions.nu"
 
 [git.files]
 "git/config" = "~/.config/git/config"

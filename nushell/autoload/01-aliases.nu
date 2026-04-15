@@ -1,5 +1,4 @@
 # 01-aliases.nu — Shell aliases for interactive use
-# Loaded after config.nu via user autoload
 
 # eza — never alias ls (Nushell's ls returns structured data)
 alias ll = ^eza -l --icons --group-directories-first --git
