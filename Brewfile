@@ -1,6 +1,7 @@
 brew "bat"
 brew "biome"
 brew "bottom"
+brew "carapace"
 brew "difftastic"
 brew "dotter"
 brew "eza"
