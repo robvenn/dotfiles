@@ -72,7 +72,7 @@
 [alias]
     amend = commit --amend --no-edit
     branches = branch --sort=-committerdate --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(color:green)%(committerdate:relative)%(color:reset)'
-    dft = -c diff.external=difft diff
+    dft = -c diff.external=difft -c pager.diff=delta diff
     dftlog = -c diff.external=difft log -p --ext-diff
     dftshow = -c diff.external=difft show --ext-diff
     fixup = commit --fixup
@@ -95,3 +95,5 @@
 # Note: signing will fail until keys are generated and config-local is populated — expected and intentional
 [include]
     path = config-local
+[pager]
+	diff = diffnav
