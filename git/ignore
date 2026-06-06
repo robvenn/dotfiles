@@ -36,6 +36,9 @@ TAGS
 *.tmp
 *.tmp.*
 
+# Scratch space
+.scratch/
+
 # Patch artifacts
 *.orig
 *.rej
