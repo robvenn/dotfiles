@@ -2,8 +2,8 @@
 # Topgrade ignores XDG_CONFIG_HOME on Windows — see .dotter/windows.toml for the override.
 
 [misc]
-# node/go/mise toolchains are mise-managed — disable the native steps
-disable = ["node", "go", "mise"]
+# globals are managed by mise + the system package manager — disable topgrade's redundant native steps
+disable = ["node", "go", "mise", "pnpm", "yarn", "bun", "bun_packages"]
 
 [commands]
 # scoped to ~ so project-local pins aren't bumped
