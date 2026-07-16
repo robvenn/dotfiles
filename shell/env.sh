@@ -3,7 +3,8 @@
 # Nushell and other child processes inherit these from the parent shell.
 # Windows equivalent: scripts/bootstrap.ps1 writes these to the registry.
 #
-# No PATH here (see zprofile). No output (breaks scp/rsync).
+# PATH: only ~/.local/bin here (needed in non-login shells); all other
+# PATH setup in zprofile. No output (breaks scp/rsync).
 
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_HOME="$HOME/.local/share"
@@ -12,6 +13,8 @@ export XDG_CACHE_HOME="$HOME/.cache"
 
 export EDITOR="hx"
 export VISUAL="$EDITOR"
+
+export HOMEBREW_NO_ASK=1
 
 export BAT_CONFIG_PATH="$XDG_CONFIG_HOME/bat/config"
 export RIPGREP_CONFIG_PATH="$XDG_CONFIG_HOME/ripgrep/config"
@@ -22,3 +25,9 @@ export FZF_DEFAULT_COMMAND="fd --type f --hidden --follow --exclude .git"
 if [ -f "$XDG_CONFIG_HOME/shell/env.local.sh" ]; then
     . "$XDG_CONFIG_HOME/shell/env.local.sh"
 fi
+
+# LAST prepend, after env.local.sh — wins over machine-local shims.
+case "$PATH" in
+    "$HOME/.local/bin:"*) ;;  # already first
+    *) export PATH="$HOME/.local/bin:$PATH" ;;
+esac
