@@ -32,6 +32,21 @@ function Set-PersistentEnv {
     Write-Success "$Name = $Value"
 }
 
+function Add-ToUserPath {
+    param([string]$Dir)
+    $current = [Environment]::GetEnvironmentVariable('Path', 'User')
+    $entries = @($current -split ';' | Where-Object { $_ -ne '' })
+    if ($entries -contains $Dir) {
+        Write-Success "PATH already contains $Dir"
+        return
+    }
+    # Prepend so it wins over stale machine-local shims.
+    $updated = (@($Dir) + $entries) -join ';'
+    [Environment]::SetEnvironmentVariable('Path', $updated, 'User')
+    $env:Path = "$Dir;$env:Path"
+    Write-Success "PATH += $Dir"
+}
+
 $warnings = @()
 
 # ── Developer Mode ────────────────────────────────────────────────────────────
@@ -122,6 +137,9 @@ Set-PersistentEnv "XDG_CONFIG_HOME" "$env:USERPROFILE\.config"
 Set-PersistentEnv "XDG_DATA_HOME"   "$env:USERPROFILE\.local\share"
 Set-PersistentEnv "XDG_STATE_HOME"  "$env:USERPROFILE\.local\state"
 Set-PersistentEnv "XDG_CACHE_HOME"  "$env:USERPROFILE\.cache"
+
+# ~/.local/bin holds shims (Fork) and `uv tool install` outputs; ensure it's on PATH.
+Add-ToUserPath "$env:USERPROFILE\.local\bin"
 
 Set-PersistentEnv "EDITOR" "hx"
 Set-PersistentEnv "VISUAL" "hx"

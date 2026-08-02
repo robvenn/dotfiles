@@ -18,7 +18,7 @@ Replaces my archived [mac dotfiles](https://github.com/robvenn/dotfiles-macos-ol
 | Tool | Scope | Platforms |
 |------|-------|-----------|
 | [Scoop](https://scoop.sh/) (`scoopfile.json`) | CLI / dev tools | Windows |
-| [winget](https://learn.microsoft.com/en-us/windows/package-manager/) | GUI / system tools | Windows |
+| [winget](https://learn.microsoft.com/en-us/windows/package-manager/) (`wingetfile.json`) | GUI / system tools | Windows |
 | [Homebrew](https://brew.sh/) (`Brewfile`) | CLI / dev tools | macOS, Linux |
 | [mise](https://mise.jdx.dev/) (`mise/config.toml`) | Node.js, npm globals, Go tools | All |
 | [uv](https://github.com/astral-sh/uv) | Python versions, venvs, packages | All |

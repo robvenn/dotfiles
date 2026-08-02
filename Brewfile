@@ -26,4 +26,6 @@ brew "uv"
 brew "zellij"
 brew "zoxide"
 
+cask "fork"
 cask "ghostty"
+cask "zed"

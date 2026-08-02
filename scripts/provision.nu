@@ -51,6 +51,33 @@ if $os == "windows" {
     }
 }
 
+# ── GUI Apps ──────────────────────────────────────────────────────────────────
+# macOS installs these as casks via `brew bundle` above; Windows uses winget.
+
+if $os == "windows" {
+    print ""
+    print "==> GUI Apps"
+
+    let wingetfile = ($dotfiles_dir | path join "wingetfile.json")
+    if (has-command "winget") and ($wingetfile | path exists) {
+        info "Importing winget packages..."
+        try {
+            ^winget import --import-file $wingetfile --accept-package-agreements --accept-source-agreements --ignore-unavailable --no-upgrade
+            success "winget packages imported"
+        } catch {
+            warn "winget import failed -- some GUI apps may need manual install"
+        }
+    } else {
+        warn "winget or wingetfile.json not found -- skipping winget import"
+    }
+
+    # Fork ships no CLI; shim its version-stable `current` junction into ~/.local/bin.
+    let local_bin = ($nu."home-dir" | path join ".local" "bin")
+    mkdir $local_bin
+    '@"%LOCALAPPDATA%\Fork\current\Fork.exe" %*' | save --force ($local_bin | path join "fork.cmd")
+    success "Fork CLI shim written to ~/.local/bin/fork.cmd"
+}
+
 # ── Rustup ────────────────────────────────────────────────────────────────────
 
 print ""
