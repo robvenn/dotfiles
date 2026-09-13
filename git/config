@@ -95,5 +95,11 @@
 # Note: signing will fail until keys are generated and config-local is populated — expected and intentional
 [include]
     path = config-local
+
+# Codeberg remotes commit with the Codeberg noreply address. Must come after config-local.
+[includeIf "hasconfig:remote.*.url:git@codeberg.org:*/**"]
+    path = config-codeberg
+[includeIf "hasconfig:remote.*.url:https://codeberg.org/**"]
+    path = config-codeberg
 [pager]
 	diff = diffnav

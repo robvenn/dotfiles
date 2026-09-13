@@ -21,6 +21,7 @@ depends = []
 "git/attributes" = "~/.config/git/attributes"
 "git/ignore" = "~/.config/git/ignore"
 "git/config-local.template" = { target = "~/.config/git/config-local", type = "template" }
+"git/config-codeberg" = "~/.config/git/config-codeberg"
 
 [ssh.variables]
 os = ""
