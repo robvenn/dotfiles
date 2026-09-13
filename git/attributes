@@ -16,6 +16,9 @@
 *.js        diff=cpp     merge=mergiraf
 *.jsx       diff=cpp     merge=mergiraf
 *.mjs       diff=cpp     merge=mergiraf
+*.cjs       diff=cpp     merge=mergiraf
+*.mts       diff=cpp     merge=mergiraf
+*.cts       diff=cpp     merge=mergiraf
 
 # Mergiraf structured merge only (no built-in diff driver)
 *.json      merge=mergiraf
@@ -37,6 +40,10 @@
 *.hs        merge=mergiraf
 *.nix       merge=mergiraf
 *.xml       merge=mergiraf
+*.tf        merge=mergiraf
+*.tfvars    merge=mergiraf
+*.hcl       merge=mergiraf
+*.properties merge=mergiraf
 
 # Diff hunk headers only (no mergiraf support)
 *.kts       diff=kotlin
