@@ -1,4 +1,4 @@
-# Login shells only — PATH setup.
+# Login shells only — session environment.
 # On macOS every terminal window is a login shell.
 # On Linux this typically runs once at graphical login.
 
@@ -13,3 +13,5 @@ fi
 command -v mise >/dev/null 2>&1 && eval "$(mise activate zsh --shims)"
 
 [ -d "$HOME/.local/bin" ] && export PATH="$HOME/.local/bin:$PATH"
+
+ulimit -Sn 8192 2>/dev/null
