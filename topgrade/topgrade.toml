@@ -2,9 +2,10 @@
 # Topgrade ignores XDG_CONFIG_HOME on Windows — see .dotter/windows.toml for the override.
 
 [misc]
-# globals are managed by mise + the system package manager — disable topgrade's redundant native steps
-disable = ["node", "go", "mise", "pnpm", "yarn", "bun", "bun_packages"]
+# allowlist: topgrade runs every detected step by default (~200). Steps whose tool is absent are skipped,
+# so this one list covers macOS and Windows. Run anything else on demand: topgrade --only <step>
+only = ["brew_formula", "brew_cask", "scoop", "winget", "rustup", "cargo", "custom_commands"]
 
 [commands]
-# scoped to ~ so project-local pins aren't bumped
-"Mise upgrade (global)" = "cd ~ && mise upgrade"
+# scoped to ~ so project-local pins aren't bumped. ";" not "&&": "&&" is a syntax error in nushell
+"Mise upgrade (global)" = "cd ~; mise upgrade"
