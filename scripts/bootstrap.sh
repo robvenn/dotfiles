@@ -6,7 +6,7 @@ REPO_URL="https://github.com/robvenn/dotfiles.git"
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 DOTFILES_DIR="$(dirname "$SCRIPT_DIR")"
 
-# Fallback for piped execution (curl | bash)
+# Fallback for remote execution (bash -c "$(curl ...)")
 if [ ! -d "$DOTFILES_DIR/.git" ]; then
     DOTFILES_DIR="$HOME/dotfiles"
 fi
@@ -19,6 +19,20 @@ warn()    { printf "  [\033[0;33mWARN\033[0m] %s\n" "$1"; }
 fail()    { printf "  [\033[0;31mFAIL\033[0m] %s\n" "$1"; exit 1; }
 
 warnings=()
+
+# ask <prompt> [default] -- reads from the terminal, prints the answer
+ask() {
+    local reply
+    printf "  [ \033[0;34m??\033[0m ] %s%s: " "$1" "${2:+ [$2]}" >&2
+    read -r reply
+    printf '%s' "${reply:-${2:-}}"
+}
+
+# TOML basic string: escape backslashes and double quotes
+toml_str() {
+    local s="${1//\\/\\\\}"
+    printf '"%s"' "${s//\"/\\\"}"
+}
 
 # ── Homebrew ──────────────────────────────────────────────────────────────────
 
@@ -75,11 +89,11 @@ if [ "$arch" = "arm64" ]; then
             success "Rosetta 2 installed"
         else
             warnings+=("Rosetta 2 skipped --some x86_64 binaries may not work")
-            warn "${warnings[-1]}"
+            warn "${warnings[${#warnings[@]}-1]}"
         fi
     else
         warnings+=("Rosetta 2 skipped (non-interactive)")
-        warn "${warnings[-1]}"
+        warn "${warnings[${#warnings[@]}-1]}"
     fi
 else
     success "Intel Mac --Rosetta 2 not needed"
@@ -107,12 +121,28 @@ local_toml="$DOTFILES_DIR/.dotter/local.toml"
 
 if [ -f "$local_toml" ]; then
     success "local.toml already exists"
-else
+elif [ -t 0 ]; then
     info "Creating local.toml for macOS..."
-    cat > "$local_toml" << 'EOF'
+    git_name="$(ask "Git name" "$(id -F 2>/dev/null || true)")"
+    git_email=""
+    while [ -z "$git_email" ]; do
+        git_email="$(ask "Git email (GitHub noreply address recommended)")"
+    done
+    cat > "$local_toml" << EOF
 packages = ["shell", "zsh", "nushell", "git", "ssh", "editorconfig", "bat", "ripgrep", "fzf", "mise", "helix", "zed", "starship", "topgrade"]
+
+[variables]
+default_name = $(toml_str "$git_name")
+default_email = $(toml_str "$git_email")
+default_signing_key = "~/.ssh/id_ed25519.pub"
+ssh_identity_file = "~/.ssh/id_ed25519"
+ssh_github_hostname = "ssh.github.com"
+ssh_github_port = "443"
+ssh_use_keychain = "yes"
 EOF
     success "local.toml created"
+else
+    fail "No terminal to ask for git identity. Run bootstrap via /bin/bash -c \"\$(curl ...)\", see README"
 fi
 
 # ── Shell Config Migration ────────────────────────────────────────────────────

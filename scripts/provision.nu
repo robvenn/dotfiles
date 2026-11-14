@@ -208,6 +208,39 @@ if (has-command "starship") {
     warn "starship not found -- skipping starship.nu"
 }
 
+# ── GitHub ────────────────────────────────────────────────────────────────────
+
+print ""
+print "==> GitHub"
+
+if not (has-command "gh") {
+    warn "gh not found -- skipping GitHub login"
+} else if ((do { ^gh auth status } | complete).exit_code == 0) {
+    success "gh already authenticated"
+} else if not (is-terminal --stdin) {
+    warn "No terminal -- run `gh auth login` later"
+} else {
+    info "Logging in to GitHub. Pick SSH, then upload or generate a key..."
+    try {
+        ^gh auth login --hostname github.com --git-protocol ssh --web --scopes admin:ssh_signing_key
+        success "gh authenticated"
+
+        let signing_key = ((do { ^git config --global --includes user.signingKey } | complete).stdout | str trim | path expand)
+        if ($signing_key | path exists) {
+            try {
+                ^gh ssh-key add $signing_key --type signing --title $"(sys host | get hostname) signing"
+                success "Signing key uploaded"
+            } catch {
+                warn "Signing key upload failed -- it may already be on GitHub"
+            }
+        } else {
+            warn $"Signing key ($signing_key) not found -- fix default_signing_key in .dotter/local.toml"
+        }
+    } catch {
+        warn "gh auth login failed -- run it later"
+    }
+}
+
 # ── Summary ───────────────────────────────────────────────────────────────────
 
 print ""

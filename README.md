@@ -54,6 +54,8 @@ Nushell can't be a login shell (it doesn't speak POSIX), so terminal emulators l
 |------|---------|
 | `~/.config/shell/env.local.sh` | Extra env vars |
 | `~/.zshrc.local` | Zsh plugins, aliases, local PATH entries |
+| `~/.config/git/config-profiles` | `includeIf` rules that pick a git identity by folder or remote URL |
+| `~/.config/git/config-<name>` | One identity per org or client, e.g. `config-acme`: `[user]`, optional `core.sshCommand` |
 
 **Adding a new env var:** add it to `shell/env.sh`, add the same value to `scripts/bootstrap.ps1` — done.
 
@@ -71,5 +73,5 @@ irm https://raw.githubusercontent.com/robvenn/dotfiles/main/scripts/bootstrap.ps
 **macOS/Linux (bash):**
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/robvenn/dotfiles/main/scripts/bootstrap.sh | bash
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/robvenn/dotfiles/main/scripts/bootstrap.sh)"
 ```
