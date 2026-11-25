@@ -13,3 +13,4 @@ node = "lts"
 
 # prebuilt binaries from GitHub releases
 "github:dlvhdr/diffnav" = "latest"
+"github:plabayo/rama" = "latest"
